@@ -36,12 +36,12 @@ class App extends Component {
         // new array to hold alphanumerics count
         let newArr = [];
 
-        for(let temp in obj){
-          newArr.push({alpha: temp , count: obj[temp]})
+        for (let temp in obj) {
+          newArr.push({ alpha: temp, count: obj[temp] })
         }
 
         // Organized array by count value 
-        var sortedArr = newArr.sort((current, next) =>  next.count - current.count);
+        var sortedArr = newArr.sort((current, next) => next.count - current.count);
         console.log('== sorted array ===========')
 
         // Log top 3 highest count
@@ -61,22 +61,44 @@ class App extends Component {
 
         console.log('Current Products Listed ', products)
 
-      })
-      .catch(err => console.log(err))
 
+
+
+        // Find twitter handle
+        let twitterHandle;
+
+        $('.footer-column').each((i, item) => {
+          let liArr = $(item).find('li');
+          console.log(liArr);
+          $(liArr).each((i, item) => {
+
+            let linkText = $(item).children('a').html()
+            if (linkText === 'Twitter') {
+              console.log('Found it !')
+              twitterHandle = $(item).children('a').attr('href');
+
+        }
+          })
+
+    console.log('== Twitter Handle =========');
+    console.log(twitterHandle);
+  })
+
+})
+      .catch (err => console.log(err))
 
   }
 
 
-  render() {
-    return (
-      <div className="App">
-        <Button onClick={this.clickHandler} letiant="primary" size="lg" block>
-          Scan
+render() {
+  return (
+    <div className="App">
+      <Button onClick={this.clickHandler} letiant="primary" size="lg" block>
+        Scan
         </Button>
-      </div>
-    );
-  }
+    </div>
+  );
+}
 }
 
 export default App;
