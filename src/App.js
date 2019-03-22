@@ -49,6 +49,15 @@ class App extends Component {
         console.log('#2 ', sortedArr[1])
         console.log('#3 ', sortedArr[3])
 
+        // .png count
+
+        let pngCount = dom.match(/.png/g);
+        console.log('png count : ' , pngCount.length)
+
+
+        let financialIntCount = dom.match(/financial institution/g);
+        console.log('financial int count : ' , financialIntCount.length)
+
 
         // Array to hold products found on the page
         const products = [];
@@ -77,28 +86,37 @@ class App extends Component {
               console.log('Found it !')
               twitterHandle = $(item).children('a').attr('href');
 
-        }
+            }
           })
 
-    console.log('== Twitter Handle =========');
-    console.log(twitterHandle);
-  })
+          console.log('== Twitter Handle =========');
+          console.log(twitterHandle);
+        })
 
-})
-      .catch (err => console.log(err))
+      })
+      .catch(err => console.log(err))
+
+      
+
+
+
+
+
+
+
 
   }
 
 
-render() {
-  return (
-    <div className="App">
-      <Button onClick={this.clickHandler} letiant="primary" size="lg" block>
-        Scan
+  render() {
+    return (
+      <div className="App">
+        <Button onClick={this.clickHandler} letiant="primary" size="lg" block>
+          Scan
         </Button>
-    </div>
-  );
-}
+      </div>
+    );
+  }
 }
 
 export default App;
