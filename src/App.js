@@ -12,7 +12,8 @@ class App extends Component {
     alphaNumerics: [],
     pngCount: 0,
     financialIntCount: 0,
-    twitterHandle: ''
+    twitterHandle: '',
+    productCount: 0
   }
 
   getDom = () => {
@@ -68,6 +69,7 @@ class App extends Component {
     console.log('#1 ', sortedArr[0])
     console.log('#2 ', sortedArr[1])
     console.log('#3 ', sortedArr[3])
+    console.log(this.state.alphaNumerics)
   }
 
   handlePngCount = () => {
@@ -90,8 +92,8 @@ class App extends Component {
 
 
     let financialIntCount = dom.match(/financial institution/g);
-    console.log('financial int count : ', financialIntCount.length)
     this.setState({ financialIntCount: financialIntCount.length })
+    console.log('financial int count : ', financialIntCount.length)
   }
 
   handleProductCount = () => {
@@ -108,8 +110,10 @@ class App extends Component {
 
     })
 
+    let productCount = products.length;
+
     console.log('Current Products Listed ', products)
-    this.setState({productCount : products.length})
+    this.setState({ productCount })
   }
 
   handleTwitterHandle = () => {
@@ -135,7 +139,7 @@ class App extends Component {
 
       console.log('== Twitter Handle =========');
       console.log(twitterHandle);
-      this.setState({twitterHandle})
+      this.setState({ twitterHandle })
     })
 
 
@@ -144,17 +148,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Button onClick={this.clickHandler} letiant="primary" size="lg" block>
-          Scan
-        </Button>
-        <Card onClickHandler={this.handleAlphaNumerics} activity={'Alpha Numeric Top 3'} />
-        <Card onClickHandler={this.handlePngCount} activity={'PNG Count'} />
-        <Card onClickHandler={this.handleFinancialCount} activity={'Count of Financial Instituation '} />
-        <Card onClickHandler={this.handleProductCount} activity={'Count of Products'}/>
-        <Card onClickHandler={this.handleTwitterHandle} activity={'Locate Twittle Handle Dynamically'}/>
+        <Card onClickHandler={this.handleAlphaNumerics} activity={'Alpha Numeric Top 3'} array={this.state.alphaNumerics} />
+        <Card onClickHandler={this.handlePngCount} activity={'PNG Count'} result={this.state.pngCount.length} />
+        <Card onClickHandler={this.handleFinancialCount} activity={'Count of Financial Instituation '} result={this.state.financialIntCount} />
+        <Card onClickHandler={this.handleProductCount} activity={'Count of Products'} result={this.state.productCount} />
+        <Card onClickHandler={this.handleTwitterHandle} activity={'Locate Twittle Handle Dynamically'} result={this.state.twitterHandle} />
       </div>
     );
   }
+
 }
 
 export default App;
