@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ## Documentation
- open [https://luismiguelrodriguez.github.io/banno-activity/index.html](Documentation)
+ open [Documentation](https://luismiguelrodriguez.github.io/banno-activity/index.html)
 
 ### `npm start`
 
