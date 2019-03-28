@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button, ProgressBar } from 'react-bootstrap';
+import { Card, Button, ProgressBar, CardColumns } from 'react-bootstrap';
 
 
 /** 
@@ -15,24 +15,27 @@ import { Card, Button, ProgressBar } from 'react-bootstrap';
 * @param { Array } props.array - An array of results to map through.
 */
 
-export default props => {
+const CardC = props => {
 
     return (
         <Card bg='light' className="text-center">
             <Card.Body >
-                <Card.Title>Activity - {props.activity}</Card.Title>
+                <Card.Title className='test-title'>Activity - {props.activity}</Card.Title>
                 <Button onClick={props.onClickHandler} variant="primary">Run Activity</Button>
             </Card.Body>
             <Card.Footer className="text-primary">{props.result ? props.result : ''}</Card.Footer>
-            {props.array ? props.array.map((item, i) => {
-                return (
+            {
+                props.array ? props.array.map((item, i) => {
+                    return (
                         // eslint-disable-next-line
-                    <Card.Footer className="text-primary" key={i}>
-                        <h5>{`AlphaNumeric: ${item.alpha}  Count: ${item.count}`}</h5>
-                        <ProgressBar now={item.count} />
-                    </Card.Footer>
-                )
-            }) : <h1>...</h1>}
+                        <Card.Footer className="text-primary" key={i}>
+                            <h5>{`AlphaNumeric: ${item.alpha}  Count: ${item.count}`}</h5>
+                            <ProgressBar now={item.count} />
+                        </Card.Footer>
+                    )
+                }) : <></>
+            }
         </Card>
     )
 }
+export default CardC;

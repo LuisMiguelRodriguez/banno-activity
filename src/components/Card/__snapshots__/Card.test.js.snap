@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card renders properly 1`] = `
+Object {
+  "$$typeof": Symbol(react.forward_ref),
+  "Body": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": undefined,
+    "propTypes": undefined,
+    "render": [Function],
+  },
+  "Footer": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": undefined,
+    "propTypes": undefined,
+    "render": [Function],
+  },
+  "Header": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": undefined,
+    "propTypes": undefined,
+    "render": [Function],
+  },
+  "Img": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": undefined,
+    "propTypes": undefined,
+    "render": [Function],
+  },
+  "ImgOverlay": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": undefined,
+    "propTypes": undefined,
+    "render": [Function],
+  },
+  "Link": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": undefined,
+    "propTypes": undefined,
+    "render": [Function],
+  },
+  "Subtitle": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": undefined,
+    "propTypes": undefined,
+    "render": [Function],
+  },
+  "Text": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": undefined,
+    "propTypes": undefined,
+    "render": [Function],
+  },
+  "Title": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": undefined,
+    "propTypes": undefined,
+    "render": [Function],
+  },
+  "defaultProps": undefined,
+  "propTypes": undefined,
+  "render": [Function],
+}
+`;
