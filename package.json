@@ -2,6 +2,7 @@
   "name": "banno-prework",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://luismiguelrodriguez.github.io/banno-activity",
   "dependencies": {
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
@@ -15,7 +16,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "docs": "./node_modules/.bin/jsdoc -c jsdoc.json"
+    "docs": "./node_modules/.bin/jsdoc -c jsdoc.json",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,6 +33,7 @@
     "docdash": "^1.0.3",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
+    "gh-pages": "^2.0.1",
     "jest-cli": "^24.5.0",
     "jsdoc": "^3.5.5"
   },
