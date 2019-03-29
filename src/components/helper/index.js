@@ -11,7 +11,7 @@ export const alphaNumerics_top3 = dom => {
             obj[item] = obj[item] + 1;
 
         } else {
-            obj[item] = 0;
+            obj[item] = 1;
         }
     })
 
